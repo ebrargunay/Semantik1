@@ -2,58 +2,39 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Benim Günüm</title>
+  <title>Ruh Hali ve Alıntı Uygulaması</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #f0f8ff;
-    }
-    h1 {
       text-align: center;
+      padding: 50px;
     }
-    .mood-selection {
-      text-align: center;
-      margin-bottom: 20px;
+    select, button {
+      margin: 10px;
+      padding: 10px;
     }
-    .mood-selection label {
-      margin: 0 10px;
-    }
-    .result-box {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      max-width: 500px;
-      margin: 20px auto;
-    }
-    .result-box p {
-      font-size: 18px;
+    #moodInfo {
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
+  <h1>Bugünkü Ruh Halini Seç</h1>
+  <select id="moodSelect">
+    <option value="mutlu">Mutlu</option>
+    <option value="üzgün">Üzgün</option>
+    <option value="yorgun">Yorgun</option>
+    <option value="stresli">Stresli</option>
+  </select>
+  <button id="getQuoteBtn">Alıntı Getir</button>
 
-  <h1>Benim Günüm</h1>
-
-  <div class="mood-selection">
-    <p>Ruh halini seç:</p>
-    <label><input type="radio" name="mood" value="mutlu"> Mutlu</label>
-    <label><input type="radio" name="mood" value="yorgun"> Yorgun</label>
-    <label><input type="radio" name="mood" value="stresli"> Stresli</label>
-    <label><input type="radio" name="mood" value="motive"> Motive</label>
-    <label><input type="radio" name="mood" value="uzgun"> Üzgün</label>
-    <br><br>
-    <button onclick="showMoodInfo()">GÖSTER</button>
+  <div id="moodInfo">
+    <h2>Durum Bilgisi</h2>
+    <p id="moodText">Henüz seçim yapılmadı.</p>
+    <p id="quoteText">Alıntı yüklenmedi.</p>
   </div>
 
-  <div class="result-box" id="resultBox" style="display: none;">
-    <p id="emoji"></p>
-    <p id="quote"></p>
-    <p id="music"></p>
-  </div>
-
+  <!-- JavaScript dosyasını burada bağlıyoruz -->
   <script src="app.js"></script>
 </body>
 </html>
