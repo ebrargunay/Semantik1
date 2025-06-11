@@ -22,17 +22,17 @@ const moods = {
 };
 
 async function getQuote() {
-  const response = await fetch("https://zenquotes.io/api/random");
+  const response = await fetch("https://api.allorigins.win/raw?url=https://zenquotes.io/api/random");
   const data = await response.json();
   return `"${data[0].q}" – ${data[0].a}`;
 }
 
-async function showMoodInfo() {
-  const mood = document.querySelector('input[name="mood"]:checked');
-  if (!mood) {
-    alert("Lütfen bir ruh hali seç!");
-    return;
-  }
+async function getQuote() {
+  const response = await fetch("https://api.allorigins.win/raw?url=https://zenquotes.io/api/random");
+  const data = await response.json();
+  return data[0].q + " — " + data[0].a;
+}
+
 
   const selectedMood = mood.value;
   const info = moods[selectedMood];
